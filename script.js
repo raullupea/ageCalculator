@@ -48,4 +48,15 @@ datePicker.addEventListener('change', function () {
     var hours = Math.round(miliSeconds / hour);
     var seconds = Math.round(miliSeconds / second);
 
+     // Printing the values in boxes
+
+     ageYear.innerHTML = years;
+     ageMonth.innerHTML = months;
+     ageDays.innerHTML = days;
+     ageHours.innerHTML = hours;
+     ageSeconds.innerHTML = seconds;
+     ageMiliSeconds.innerHTML = miliSeconds;
+     
+      document.querySelector('.age-calc').classList.add('expand');
+
 }); 

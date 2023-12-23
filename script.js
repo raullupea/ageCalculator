@@ -39,4 +39,13 @@ datePicker.addEventListener('change', function () {
     var day = hour * 24;
     var month = day * 30;
     var year = day * 365; 
+
+     // Start the Calculation
+
+    var years = Math.round(miliSeconds / year);
+    var months = years * 12;
+    var days = years * 365;
+    var hours = Math.round(miliSeconds / hour);
+    var seconds = Math.round(miliSeconds / second);
+
 }); 

@@ -15,5 +15,28 @@ var ageMiliSeconds = document.getElementById('ageMiliSeconds');
 // this event listener listens when box changed and do the function...
 
 datePicker.addEventListener('change', function () {
-    
-}
+
+    var options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    };
+    var selectedDate = new Date(this.value);
+    var DOB = selectedDate.toLocaleDateString('en-US', options);
+
+
+    choseDate.innerHTML = "DOB : " + " " + DOB;
+    var miliSeconds_Btw_DOB = Date.parse(DOB);
+    var miliSeconds_Btw_Now = Date.now();
+
+    var age_in_MiliSeconds = miliSeconds_Btw_Now - miliSeconds_Btw_DOB;
+    //console.log(age_in_MiliSeconds);
+
+    var miliSeconds = age_in_MiliSeconds;
+    var second = 1000;
+    var minute = second * 60;
+    var hour = minute * 60;
+    var day = hour * 24;
+    var month = day * 30;
+    var year = day * 365; 
+}); 
